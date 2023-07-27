@@ -24,24 +24,6 @@ pipeline {
             }
         }
 
-        stage('Build Docker image') {
-            steps {
-                script {
-                    sh 'docker build -t dockerUser/inventory-stock.restApi-project .'
-                }
-            }
-        }
-
-        stage('Push docker image to hub') {
-            steps {
-                script {
-                    withCredentials([string(credentialsId: 'dockers', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
-                         sh "docker login -u ${dockerUser} -p ${dockerPassword}"
-                    }
-                    sh 'docker push dockerUser/inventory-stock.restApi-project'
-                }
-
-            }
         }
     }
 }
