@@ -1,0 +1,24 @@
+IN POSTMAN
+
+localhost:8080/rabin/productIncomings
+
+{
+    "name":"Technology",
+    "price":"1500",
+    "description":"retail",
+    "quantity":"7500",
+    "categories":[
+        {
+            "name":"iphone",
+            "discreption":"iphone 14"
+        },
+        {
+          "name":"laptop",
+            "discreption":"macbook"  
+        },
+        {
+          "name":"watch",
+            "discreption":"iWatch"  
+        }
+    ]
+}
