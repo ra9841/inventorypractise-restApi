@@ -1,4 +1,4 @@
-package com.rabin.inventorystock.restApiproject.vo;
+  package com.rabin.inventorystock.restApiproject.vo;
 
 import java.util.List;
 
