@@ -1,16 +1,32 @@
 package com.rabin.inventorystock.restApiproject.vo;
 
+import java.util.List;
+
+import com.rabin.inventorystock.restApiproject.entity.AccountDetail;
+
 public class UserVo {
-	private int id;
 	private String username;
 	private String password;
 	private String email;
-	private String role;
-	public int getId() {
-		return id;
+	private String ssn;
+	private String phoneNumber;
+	private int age;
+	private List<AccountDetail> accountDetail;
+	
+	public UserVo(String username, String password, String email, String ssn, String phoneNumber, int age,
+			List<AccountDetail> accountDetail) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.ssn = ssn;
+		this.phoneNumber = phoneNumber;
+		this.age = age;
+		this.accountDetail = accountDetail;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public UserVo() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	public String getUsername() {
 		return username;
@@ -30,11 +46,31 @@ public class UserVo {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getRole() {
-		return role;
+	public String getSsn() {
+		return ssn;
 	}
-	public void setRole(String role) {
-		this.role = role;
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public List<AccountDetail> getAccountDetail() {
+		return accountDetail;
+	}
+	public void setAccountDetail(List<AccountDetail> accountDetail) {
+		this.accountDetail = accountDetail;
+	}
+
+	
 	
 }
