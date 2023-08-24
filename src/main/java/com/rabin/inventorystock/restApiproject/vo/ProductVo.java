@@ -2,6 +2,11 @@
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductVo {
 	private int product_id;
 	private String name;
@@ -58,6 +63,10 @@ public class ProductVo {
 	}
 	public void setCategories(List<CategoryVo> categories) {
 		this.categories = categories;
+	}
+	public static ResponseEntity<ProductVo> builder() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

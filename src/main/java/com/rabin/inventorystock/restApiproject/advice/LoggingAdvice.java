@@ -32,8 +32,10 @@ public class LoggingAdvice {
 		Object[] array=pjp.getArgs();
 		log.info("method invoked " + className +":"+ methodName +":"+"()" + "arguments :" 
 				+ mapper.writeValueAsString(array));//before method invoked.which end point using
+		long stratTime=System.currentTimeMillis();//tracking time
 		Object object=pjp.proceed();
-		log.info( className +":"+ methodName +":"+"()" + "response :" 
+		long endTime=System.currentTimeMillis();
+		log.info( className +":"+ methodName +":"+"()"+" "+" time taken to execute : "+(endTime-stratTime)+"millisecond"+" " + "response :" 
 				+ mapper.writeValueAsString(object));//capturing response after proceed
 		return object;
 	}
