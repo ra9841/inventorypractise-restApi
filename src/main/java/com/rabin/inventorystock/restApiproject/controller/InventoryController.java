@@ -3,6 +3,7 @@ package com.rabin.inventorystock.restApiproject.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import com.rabin.inventorystock.restApiproject.vo.ProductVo;
 public class InventoryController {
 	@Autowired
 	private ProductService productService;
+
 
 //	@PostMapping("/productIncomings")
 //	public ResponseEntity<String> inventoryProductIncoming(@RequestBody ProductVo productVo) {
