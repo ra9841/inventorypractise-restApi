@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.rabin.inventorystock.restApiproject.entity.ProductEntity;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity,Integer>{
+	
 
 	List<ProductEntity> findByName(String name);
 

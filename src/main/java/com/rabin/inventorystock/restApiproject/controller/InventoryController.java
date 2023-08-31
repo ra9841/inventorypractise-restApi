@@ -3,6 +3,9 @@ package com.rabin.inventorystock.restApiproject.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,7 @@ import com.rabin.inventorystock.restApiproject.vo.ProductVo;
 
 @RestController
 @RequestMapping("/rabin")
+@EnableCaching
 public class InventoryController {
 	@Autowired
 	private ProductService productService;
@@ -46,6 +50,8 @@ public class InventoryController {
 	
 		
 		@GetMapping("/getParticularRecords/{name}")
+		@CacheEvict(key="#name",value="ProductVo")
+		//@Cacheable(key="#name",value="ProductVo",unless="#result.price > 2500")
 		public ResponseEntity<List<ProductVo>> getRecordByName(@PathVariable String name){
 			List<ProductVo>product =productService.getProductRecordByName(name);
 			if (product.isEmpty()) {
